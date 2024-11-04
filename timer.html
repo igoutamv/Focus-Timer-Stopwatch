@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="./Assets/target.png" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Focus: Timer</title>
+    <link rel="stylesheet" href="timer.css" />
+  </head>
+  <body>
+    <div class="timer">
+      <div id="hr">00</div>
+      <span>:</span>
+      <div id="min">00</div>
+      <span>:</span>
+      <div id="sec">00</div>
+    </div>
+
+    <div id="main-timer-below">
+      <button id="start">
+        <svg
+          id="controllers"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M5 18.9346C5 20.4745 6.66722 21.4367 8.00056 20.6663L20.0028 13.7317C21.3354 12.9618 21.3354 11.0382 20.0028 10.2683L8.00055 3.33363C6.66722 2.56326 5 3.52548 5 5.06537V18.9346ZM19.0022 12L7 18.9346L7 5.06537L19.0022 12Z"
+            fill="wheat"
+          />
+        </svg>
+      </button>
+      <button id="pause" class="hidden">
+        <svg
+          id="controllers"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M4 19C4 20.1046 4.89543 21 6 21H8.5C9.60457 21 10.5 20.1046 10.5 19V5C10.5 3.89543 9.60457 3 8.5 3H6C4.89543 3 4 3.89543 4 5V19ZM6 5L8.5 5V19H6L6 5Z"
+            fill="wheat"
+          />
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M15.5 3C14.3954 3 13.5 3.89543 13.5 5V19C13.5 20.1046 14.3954 21 15.5 21H18C19.1046 21 20 20.1046 20 19V5C20 3.89543 19.1046 3 18 3H15.5ZM15.5 5L18 5V19H15.5V5Z"
+            fill="wheat"
+          />
+        </svg>
+      </button>
+      <button id="reset">
+        <svg
+          id="controllers"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M3 5C3 3.89543 3.89543 3 5 3H19C20.1046 3 21 3.89543 21 5V19C21 20.1046 20.1046 21 19 21H5C3.89543 21 3 20.1046 3 19V5ZM5 19L5 5H19V19H5Z"
+            fill="#FF0000"
+          />
+        </svg>
+      </button>
+      <button id="set_time">Enter Time</button>
+    </div>
+
+    <div id="popup" class="popup hidden">
+      <div class="popup-content" id="under_pop">
+        <div>
+          <p>Enter Time / Scroll Mouse (ESC)</p>
+        </div>
+        <div id="equals">
+          <label for="hours">HH:</label>
+          <input type="number" id="hours" min="0" />
+          <label for="minutes">MM:</label>
+          <input type="number" id="minutes" min="0" max="59" />
+          <label for="seconds">SS:</label>
+          <input type="number" id="seconds" min="0" max="59" />
+          <button id="set">Set</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="fscreen" title="Fullscreen">
+      <svg
+        id="fenter"
+        style="display: block"
+        class="active"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M21 9C21 9.55229 20.5523 10 20 10C19.4477 10 19 9.55229 19 9V5H15C14.4477 5 14 4.55229 14 4C14 3.44772 14.4477 3 15 3H20C20.5523 3 21 3.44772 21 4V9Z"
+          fill="white"
+        />
+        <path
+          d="M5 15C5 14.4477 4.55229 14 4 14C3.44772 14 3 14.4477 3 15L3 20C3 20.5523 3.44772 21 4 21H9C9.55229 21 10 20.5523 10 20C10 19.4477 9.55229 19 9 19H5V15Z"
+          fill="white"
+        />
+        <path
+          d="M19 15C19 14.4477 19.4477 14 20 14C20.5523 14 21 14.4477 21 15V20C21 20.5523 20.5523 21 20 21H15C14.4477 21 14 20.5523 14 20C14 19.4477 14.4477 19 15 19H19V15Z"
+          fill="white"
+        />
+        <path
+          d="M4 10C4.55229 10 5 9.55229 5 9V5H9C9.55229 5 10 4.55229 10 4C10 3.44772 9.55229 3 9 3H4C3.44772 3 3 3.44772 3 4L3 9C3 9.55229 3.44772 10 4 10Z"
+          fill="white"
+        />
+      </svg>
+    </div>
+
+    <script src="timer.js"></script>
+  </body>
+</html>
