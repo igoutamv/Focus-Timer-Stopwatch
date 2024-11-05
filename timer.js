@@ -1,5 +1,5 @@
 let timer;
-let timeLeft = 30;
+let timeLeft = 00;
 let isRunning = false;
 
 const hrDisplay = document.getElementById('hr');
@@ -67,7 +67,7 @@ function pauseTimer() {
 function resetTimer() {
     clearInterval(timer);
     isRunning = false;
-    timeLeft = 30;
+    timeLeft = 00;
     updateDisplay();
     startButton.classList.remove('hidden');
     pauseButton.classList.add('hidden');
