@@ -93,7 +93,7 @@ span {
   filter: drop-shadow(1px 1px 8px rgba(239, 207, 223, 0.5));
 }
 #set_time {
-  height: 45%;
+  height: 60px;
   outline: none;
   width: 150px;
   border-radius: 10px;
