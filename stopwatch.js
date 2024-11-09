@@ -13,10 +13,10 @@ playButton.addEventListener('click', playTimer);
 pauseButton.addEventListener('click', pauseTimer);
 stopButton.addEventListener('click', stopTimer);
 
-// Add event listener for keydown event
+// using 'space' button to start the stopwatch
 document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
-        event.preventDefault(); // Prevent scrolling the page
+        event.preventDefault();
         if (isRunning) {
             pauseTimer();
         } else {
@@ -28,9 +28,9 @@ document.addEventListener('keydown', (event) => {
 function playTimer() {
     if (!isRunning) {
         isRunning = true;
-        playButton.style.display = 'none';  // Hide Play button
-        pauseButton.style.display = 'inline'; // Show Pause button
-        stopButton.style.display = 'inline';  // Show Stop button
+        playButton.style.display = 'none';  
+        pauseButton.style.display = 'inline';
+        stopButton.style.display = 'inline'; 
         
         timer = setInterval(() => {
             elapsedTime++;
@@ -43,8 +43,8 @@ function pauseTimer() {
     if (isRunning) {
         clearInterval(timer);
         isRunning = false;
-        playButton.style.display = 'block'; // Show Play button
-        pauseButton.style.display = 'none';   // Hide Pause button
+        playButton.style.display = 'block'; 
+        pauseButton.style.display = 'none'; 
     }
 }
 
@@ -53,9 +53,9 @@ function stopTimer() {
     isRunning = false;
     elapsedTime = 0;
     updateDisplay();
-    playButton.style.display = 'inline'; // Show Play button
-    pauseButton.style.display = 'none';   // Hide Pause button
-    stopButton.style.display = 'none';    // Hide Stop button
+    playButton.style.display = 'inline';
+    pauseButton.style.display = 'none'; 
+    stopButton.style.display = 'none';  
 }
 
 function updateDisplay() {
@@ -70,7 +70,6 @@ function updateDisplay() {
 
 const svgElement = document.getElementById('fenter');
 
-// Event listener for click on the SVG icon
 svgElement.addEventListener('click', () => {
     if (document.fullscreenElement) {
         document.exitFullscreen();
@@ -79,17 +78,13 @@ svgElement.addEventListener('click', () => {
     }
 });
 
-// Function to update the SVG display based on fullscreen state
 function updateSvgDisplay() {
     if (document.fullscreenElement) {
-        svgElement.style.display = 'none';  // Hide the icon when in fullscreen
+        svgElement.style.display = 'none';  
     } else {
-        svgElement.style.display = 'block';  // Show the icon when exiting fullscreen
+        svgElement.style.display = 'block'; 
     }
 }
-
-// Listen for fullscreen change events
 document.addEventListener('fullscreenchange', updateSvgDisplay);
 
-// Initial state check
 updateSvgDisplay();
