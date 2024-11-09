@@ -1,5 +1,5 @@
 let timer;
-let timeLeft = 00;
+let timeLeft = 30;
 let isRunning = false;
 
 const hrDisplay = document.getElementById('hr');
@@ -15,10 +15,9 @@ const hoursInput = document.getElementById('hours');
 const minutesInput = document.getElementById('minutes');
 const secondsInput = document.getElementById('seconds');
 
-// Add event listener for keydown event
 document.addEventListener('keydown', (event) => {
     if (event.code === 'Space') {
-        event.preventDefault(); // Prevent scrolling the page
+        event.preventDefault(); 
         if (isRunning) {
             pauseTimer();
         } else {
@@ -67,7 +66,7 @@ function pauseTimer() {
 function resetTimer() {
     clearInterval(timer);
     isRunning = false;
-    timeLeft = 00;
+    timeLeft = 30;
     updateDisplay();
     startButton.classList.remove('hidden');
     pauseButton.classList.add('hidden');
@@ -94,9 +93,8 @@ updateDisplay();
 
 // Function to hide the pop-up div
 function hidePopup(event) {
-    // Check if the pressed key is the Escape key
     if (event.key === "Escape") {
-        const popup = document.getElementById("popup"); // Get the pop-up div
+        const popup = document.getElementById("popup");
         if (popup) {
             popup.classList.add('hidden');
 
@@ -107,7 +105,6 @@ document.addEventListener("keydown", hidePopup);
 
 const svgElement = document.getElementById('fenter');
 
-// Event listener for click on the SVG icon
 svgElement.addEventListener('click', () => {
     if (document.fullscreenElement) {
         document.exitFullscreen();
@@ -116,17 +113,14 @@ svgElement.addEventListener('click', () => {
     }
 });
 
-// Function to update the SVG display based on fullscreen state
 function updateSvgDisplay() {
     if (document.fullscreenElement) {
-        svgElement.style.display = 'none';  // Hide the icon when in fullscreen
+        svgElement.style.display = 'none';  
     } else {
-        svgElement.style.display = 'block';  // Show the icon when exiting fullscreen
+        svgElement.style.display = 'block'; 
     }
 }
 
-// Listen for fullscreen change events
 document.addEventListener('fullscreenchange', updateSvgDisplay);
 
-// Initial state check
 updateSvgDisplay();
