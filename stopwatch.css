@@ -108,7 +108,7 @@ button {
   scale: 1.2;
 }
 .rotate {
-  transform: rotate(120deg); /* Rotate 120 degrees */
+  transform: rotate(120deg);
 }
 .red {
   color: red;
