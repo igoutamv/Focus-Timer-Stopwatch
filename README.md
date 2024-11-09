@@ -8,7 +8,7 @@ This is a simple Timer and Stopwatch Web App, designed with a minimalist UI to b
 - **Pop-up Alerts**: Get Pop-up when the timer ends.
 - **Background Support**: This project includes background processes running on your device
 
-# Repository Contribution
+## Repository Contribution
 Contributions are welcome! If you have suggestions for improvements or want to report a bug, please open an issue or submit a pull request.
 1. Fork the repository
 2. Create your feature branch
